@@ -1,0 +1,13 @@
+apiVersion: v1
+entries:
+  oracle-db:
+  - apiVersion: v1
+    appVersion: 21.3.0
+    created: "2025-01-26T23:34:12.379026317+01:00"
+    description: A Helm chart for deploying Oracle 21g XE
+    digest: b5ab4190adb6a0646a835cc7f2d6114b575a3a4d51cfd8b141f2e9366d5a8cf0
+    name: oracle-db
+    urls:
+    - https://brunopenha.github.io/helm-charts/oracle-db-0.1.0.tgz
+    version: 0.1.0
+generated: "2025-01-26T23:34:12.378540586+01:00"
