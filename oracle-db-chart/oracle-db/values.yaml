@@ -1,0 +1,31 @@
+replicaCount: 1
+
+# Docker image details
+image:
+  repository: brunopenha/oracle
+  tag: "21.3.0-xe"
+  pullPolicy: IfNotPresent
+
+# Password for Oracle database
+env:
+  oraclePwd: "manager"
+
+# Persistence settings
+persistence:
+  enabled: true
+  storageClass: ""
+  accessModes:
+    - ReadWriteOnce
+  size: 5Gi
+  mountPath: "/u01/app/oracle/oradata"
+
+# Ports
+service:
+  type: NodePort
+  ports:
+    database: 1521
+    apex: 8080
+
+nodePort:
+  database: 31521
+  apex: 32100

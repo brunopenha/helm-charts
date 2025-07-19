@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Release.Name }}-oracle-svc
+  labels:
+    app: {{ .Chart.Name }}
+spec:
+  type: {{ .Values.service.type }}
+  selector:
+    app: {{ .Chart.Name }}
+  ports:
+  - name: database
+    protocol: TCP
+    port: {{ .Values.service.ports.database }}
+    targetPort: {{ .Values.service.ports.database }}
+    nodePort: {{ .Values.nodePort.database }}
+  - name: apex
+    protocol: TCP
+    port: {{ .Values.service.ports.apex }}
+    targetPort: {{ .Values.service.ports.apex }}
+    nodePort: {{ .Values.nodePort.apex }}
